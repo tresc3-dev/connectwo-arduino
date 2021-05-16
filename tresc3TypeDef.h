@@ -1,0 +1,13 @@
+
+
+#define MESSAGE_IMU
+#define MESSAGE_IMU_X_INDEX
+#define MESSAGE_IMU_Y_INDEX
+#define MESSAGE_IMU_Z_INDEX
+
+#define MESSAGE_VEL
+#define MESSAGE_VEL_X_INDEX
+#define MESSAGE_VEL_Y_INDEX
+#define MESSAGe_VEL_Z_INDEX
+
+ 
