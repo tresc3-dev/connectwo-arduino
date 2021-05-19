@@ -1,20 +1,30 @@
 #ifndef __STATEMACHINE_H__
 #define __STATEMACHINE_H__
 
+#include <Arduino.h>
+#include <tresc3TypeDef.h>
 
+#define START 1
+#define CONFIRM 2
+#define CMD1 3
+#define CMD2 4
+#define LENGTH1 5
+#define LENGTH2 6
+#define DATA 7
+#define CHECK 8
 
 namespace tresc3
 {
     enum machineSequence
     {
-        start, confirm, cmd1, cmd2, length1, length2, data, check,
+        start = 1, confirm, cmd1, cmd2, length1, length2, data, check,
     };
 
     struct packet{
         unsigned int cmd;
         unsigned int length;
-        char data[255];
-        char checkSum;
+        uint8_t data[255];
+        uint8_t checkSum;
     };
 
     class StateMachine
@@ -27,8 +37,9 @@ namespace tresc3
             int state;
             packet result;
             int dataCount;
+
         public:
-            bool run(char data);
+            bool run(uint8_t data);
             void resetPacket();
             packet getPacket();
     };
